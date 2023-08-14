@@ -1,0 +1,351 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "contractName",
+        "type": "bytes32"
+      }
+    ],
+    "name": "NonExistentGlobalContract",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "optionMarket",
+        "type": "address"
+      }
+    ],
+    "name": "NonExistentMarket",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "thrower",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "market",
+        "type": "address"
+      }
+    ],
+    "name": "RemovingInvalidMarket",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "name",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "addr",
+        "type": "address"
+      }
+    ],
+    "name": "GlobalAddressUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "market",
+        "type": "address"
+      }
+    ],
+    "name": "MarketRemoved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "optionMarket",
+        "type": "address"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "liquidityPool",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "liquidityToken",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "greekCache",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "optionMarket",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "optionMarketPricer",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "optionToken",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "poolHedger",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "shortCollateral",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "gwavOracle",
+            "type": "address"
+          },
+          {
+            "internalType": "contract IERC20",
+            "name": "quoteAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "contract IERC20",
+            "name": "baseAsset",
+            "type": "address"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct ILyraRegistry.OptionMarketAddresses",
+        "name": "market",
+        "type": "tuple"
+      }
+    ],
+    "name": "MarketUpdated",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "contractName",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getGlobalAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "globalContract",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "optionMarket",
+        "type": "address"
+      }
+    ],
+    "name": "getMarketAddresses",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "liquidityPool",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "liquidityToken",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "greekCache",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "optionMarket",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "optionMarketPricer",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "optionToken",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "poolHedger",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "shortCollateral",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "gwavOracle",
+            "type": "address"
+          },
+          {
+            "internalType": "contract IERC20",
+            "name": "quoteAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "contract IERC20",
+            "name": "baseAsset",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct ILyraRegistry.OptionMarketAddresses",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "name",
+        "type": "bytes32"
+      }
+    ],
+    "name": "globalAddresses",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "market",
+        "type": "address"
+      }
+    ],
+    "name": "marketAddress",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "liquidityPool",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "liquidityToken",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "greekCache",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "optionMarket",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "optionMarketPricer",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "optionToken",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "poolHedger",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "shortCollateral",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "gwavOracle",
+            "type": "address"
+          },
+          {
+            "internalType": "contract IERC20",
+            "name": "quoteAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "contract IERC20",
+            "name": "baseAsset",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct ILyraRegistry.OptionMarketAddresses",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "optionMarkets",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "thrower",
+        "type": "address"
+      }
+    ],
+    "name": "AlreadyInitialised",
+    "type": "error"
+  }
+]
